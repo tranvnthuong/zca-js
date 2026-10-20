@@ -22,13 +22,9 @@ export type SendCustomStickerResponse = {
 export const sendCustomStickerFactory = apiFactory<SendCustomStickerResponse>()((api, _ctx, utils) => {
     const serviceURL = {
         [ThreadType.User]: utils.makeURL(`${api.zpwServiceMap.file[0]}/api/message/photo_url`, {
-            zpw_ver: "645",
-            zpw_type: "30",
             nretry: "0",
         }),
         [ThreadType.Group]: utils.makeURL(`${api.zpwServiceMap.file[0]}/api/group/photo_url`, {
-            zpw_ver: "645",
-            zpw_type: "30",
             nretry: "0",
         }),
     };
